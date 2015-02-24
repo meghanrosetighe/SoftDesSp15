@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Feb  2 11:24:42 2014
-
 @author: Meghan Tighe
 
 """
@@ -30,7 +29,7 @@ def get_complement(nucleotide):
     >>> get_complement('C')
     'G'
     """
-    # TODO: implement this
+    # TODO: implement this  <--Delete unnecessary code to keep final turn in clean
     if nucleotide == 'A':
         return 'T'
     elif nucleotide == 'T':
@@ -40,7 +39,7 @@ def get_complement(nucleotide):
     elif nucleotide == 'G':
         return 'C'
     else:
-        return 'WTF?'
+        return 'Nucleotide not found' #funny, but try to make error messages more informative in future for easy debugging
 
 def get_reverse_complement(dna):
     """ Computes the reverse complementary sequence of DNA for the specfied DNA
@@ -188,7 +187,7 @@ def longest_ORF_noncoding(dna, num_trials):
         returns: the maximum length longest ORF """
     longest = ''
     i = 1
-    while i<=num_trials:            
+    while i<=num_trials: #while loops are great, but for loops avoid infinite looping   
         shuffled = shuffle_string(dna)
         a_long = longest_ORF(shuffled)
         if len(a_long)>len(longest):
@@ -220,15 +219,14 @@ def coding_strand_to_AA(dna):
         i = i + 3
     return amino_acids
 
+"""
+These merge conflicts MUST be resolved when committing final code. This script will not run
+because of this. Simply delete parts of the merge conflict that you don't want.
+"""
 
 def gene_finder(dna):
-<<<<<<< HEAD
     """ Returns the amino acid sequences coded by all genes that have an ORF
         larger than the specified threshold.
-=======
-    """ Returns the amino acid sequences that are likely coded by the specified dna
->>>>>>> f995e7995873fb13efc0faeca7688191045d189d
-        
         dna: a DNA sequence
         returns: a list of all amino acid sequences coded by the sequence dna.
     """
@@ -246,7 +244,6 @@ def salmonella_gene_finder():
     genes = gene_finder(dna)
     for gene in genes:
         print gene
-
 
 if __name__ == "__main__":
     import doctest
