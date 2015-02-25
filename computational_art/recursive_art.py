@@ -1,6 +1,6 @@
 """ Recursive Computational art
     Meghan Tighe
-    Soft Des Sp 15
+    Soft Des Sp 15  <--Nice, but make header string more descriptive next time
 """
 
 import random
@@ -20,7 +20,7 @@ def build_random_function(min_depth, max_depth):
                  (see assignment writeup for details on the representation of
                  these functions)
     """
-    # TODO: implement this
+    # TODO: implement this  <--Delete unnecessary code in future
     options_1var = ["cos_pi","sin_pi","square","root"]
     options_2var = ["prod","avg"]
     options_base = ['x','y']
@@ -66,7 +66,7 @@ def evaluate_random_function(f, x, y):
     elif f[0] == "square":
         return (evaluate_random_function(f[1],x,y) **2)
     else:
-        raise Exception("Not one of the options" + f[0])
+        raise Exception("Not one of the options" + f[0]) #Great error catching!
 
 
 def remap_interval(val, input_interval_start, input_interval_end, output_interval_start, output_interval_end):
@@ -92,7 +92,8 @@ def remap_interval(val, input_interval_start, input_interval_end, output_interva
         >>> remap_interval(5, 4, 6, 1, 2)
         1.5
     """
-    return (val- input_interval_start + 0.0)/(input_interval_end - input_interval_start) * (output_interval_end - output_interval_start) + output_interval_start
+    #below also works
+    return (val- input_interval_start)./(input_interval_end - input_interval_start) * (output_interval_end - output_interval_start) + output_interval_start
 
 
 def color_map(val):
