@@ -1,0 +1,17 @@
+AI and Algorithm Toolbox
+
+Print Scores:
+F_Score: The total estimated cost to go thru each square
+G_Score: The actual cost of traveling to each square
+H_Score: The estimated cost of going to the cake from each square
+
+Diagonals:
+Paul originally moves diagonally because he cannot go in any of the cardinal directions. Once he can go left/right/up/down he returns to this because it is less costly (1+1 < 3).
+
+Hops:
+I once again set up the arena so that Paul is forced to use his new skill to get out of his starting spot.Here he hops twice but later he has the option to either hop again or take a short detour. Because hopping is so costly, he chooses to go the extra few squares.
+
+Swamped:
+Paul is forced to go through one of the swamp tiles to get to the cake. I had the game print the g_cost. Once getting to the swamp tile, it jumps from 2 to 6: the normal 1 for going down plus 3 extra for going through a swamp tile.
+
+Yay! :)
