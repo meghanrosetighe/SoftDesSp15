@@ -36,7 +36,7 @@ def plot_tweets(tweets, details, house):
 if __name__ == '__main__':
 	plt.figure()
 	plt.hold(True)
-	g_sents = get_tweets('gryffindor.txt')
+	g_sents = get_tweets('gryffindor.txt') #You can put this in a loop/function to save all this repetition
 	s_sents = get_tweets('slytherin.txt')
 	r_sents = get_tweets('ravenclaw.txt')
 	h_sents = get_tweets('hufflepuff.txt')
