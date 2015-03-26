@@ -115,7 +115,7 @@ def color_map(val):
     color_code = remap_interval(val, -1, 1, 0, 255)
     return int(color_code)
 
-def test_image(filename, x_size=350, y_size=350):
+def test_image(filename, x_size=2560, y_size=1600):
     """ Generate test image with random pixels and save as an image file.
 
         filename: string filename for image (should be .png)
@@ -135,16 +135,16 @@ def test_image(filename, x_size=350, y_size=350):
     im.save(filename)
 
 
-def generate_art(filename, x_size=350, y_size=350):
+def generate_art(filename, x_size=2560, y_size=1600):
     """ Generate computational art and save as an image file.
 
         filename: string filename for image (should be .png)
         x_size, y_size: optional args to set image dimensions (default: 350)
     """
     # Functions for red, green, and blue channels - where the magic happens!
-    red_function = build_random_function(4,9)
-    green_function = build_random_function(4,9)
-    blue_function = build_random_function(4,9)
+    red_function = build_random_function(8,10)
+    green_function = build_random_function(8,10)
+    blue_function = build_random_function(8,10)
 
     # Create image and loop over all pixels
     im = Image.new("RGB", (x_size, y_size))
@@ -168,7 +168,7 @@ if __name__ == '__main__':
     # Create some computational art!
     # TODO: Un-comment the generate_art function call after you
     #       implement remap_interval and evaluate_random_function
-    generate_art("myart10.png")
+    generate_art("myart12.png")
 
     # Test that PIL is installed correctly
     # TODO: Comment or remove this function call after testing PIL install
