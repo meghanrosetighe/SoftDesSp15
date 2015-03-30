@@ -1,0 +1,11 @@
+Writeup for Machine Learning Toolbox
+Meghan Tighe
+
+
+1. General trend is a positive correlation. More training leads to a higher score in the testing phase. Which makes sense. Just like people learning.
+
+2. The area with the greatest noise generally seems to be the middle, near 50%. I suppose this is because at that rate the score depends the most on which data elements are used in the training phase.
+
+3. I don't really know what is defined as smooth. Even with 100 trials, the curve is still a bit bumpy. It works better if you adjust the percentages (test every 1% instead of every 5%).
+
+4. Weird things happen. If the exponent is increased to -2, the line becomes much smoother. If it is decreased to -20, it is a flat line up until about 65%, at which point it jumps up dramatically but is jagged as well.

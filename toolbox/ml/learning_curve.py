@@ -7,7 +7,6 @@ from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 data = load_digits()
-print data.DESCR
 num_trials = 10
 train_percentages = range(5,95,5)
 test_accuracies = numpy.zeros(len(train_percentages))
@@ -18,6 +17,18 @@ test_accuracies = numpy.zeros(len(train_percentages))
 # for consistency with the previous example use model = LogisticRegression(C=10**-10) for your learner
 
 # TODO: your code here
+for index, percent in enumerate(train_percentages):
+	i = 0
+	sum = 0
+	while i<num_trials:
+		X_train, X_test, y_train, y_test = train_test_split(data.data, data.target, train_size=percent)
+		model = LogisticRegression(C=10**-10)
+		model.fit(X_train, y_train)
+		i+=1
+		sum = sum + model.score(X_test,y_test)
+	test_accuracies[index] = sum / num_trials
+
+
 
 fig = plt.figure()
 plt.plot(train_percentages, test_accuracies)
